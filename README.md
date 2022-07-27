@@ -1,7 +1,30 @@
+- [Featuers](#featuers)
+  - [SSR Rendering with Nuxt](#ssr-rendering-with-nuxt)
+  - [Sort](#sort)
+  - [Push Search and Region and Sort to URL](#push-search-text-to-url)
 - [Docker Test](#docker-test)
-  - [sss](ddd)
-- [Docker Test](#test)
-# test
+  - [Build Docker File](#build-docker)
+  - [Run on docker](#start-docker)
+- [normal Test](#normal-test)
+
+# Featuers
+## SSR Rendering with Nuxt
+all page compile on server and we use nuxt-links for client and server side support of pages
+- for example if you inspect on browser and refresh page you see that page completely rendered from server but if you search a country name thsi operation process on client
+here is screenshot of server side rendering
+![Nuxt Rendering](./help/nuxt.png)
+
+## Sort 
+if you click on `population` or `country name` page sort with selected button `Asc`/`Desc`
+TODO Add pic
+
+## push search text to url 
+if we sort or search we change url and also this url processed on SSR if Google or any crawller wnat to see that URL
+
+TODO Add pic
+
+
+# Normal test
 
 ## Build Setup
 
