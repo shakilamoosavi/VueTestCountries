@@ -81,7 +81,7 @@
                 }} </span>
               </div>
             </b-col>
-            <b-col cols="12" class="border-countries-box">
+            <b-col v-if="borders?.length > 0" cols="12" class="border-countries-box">
               <span class="info-title"> Border Countries: </span>
               <NuxtLink v-for="(country, indexC) in borders" :to="'/detail/' + country.name?.toLowerCase()"
                 class="btn my-1 mr-1">
