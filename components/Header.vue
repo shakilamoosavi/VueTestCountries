@@ -63,7 +63,7 @@ nav {
 }
  
 .navigation__title {
-  font-weight: bold;
+  font-weight: 800;
 }
 .navigation__theme {
     font-size: 90%;

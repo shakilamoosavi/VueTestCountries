@@ -27,12 +27,17 @@ if we sort or search we change url and also this url processed on SSR if Google 
 
 ## Theme
  Toggle the color scheme between light and dark mode without using any 3rd party libraries
+![Nuxt Rendering](./help/theme.png)
 
 
 ## Lazy load images
+Using lazy loading for country images and list
+![Nuxt Rendering](./help/lazy-load.png)
 
 
 ## Server side rendering
+Using server side rendering for list and detail pages
+
 
 
 ## Build Setup

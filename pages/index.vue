@@ -8,7 +8,7 @@
         <b-col cols="12" xl="4" class="mb-3">
           <div class="search-input">
             <fa :icon="['fas', 'search']" />
-            <b-form-input v-model="searchParams.countryName" @input="gitCountriesByName()"
+            <b-form-input v-model="searchParams.countryName" @input="getCountriesByName()"
               placeholder="Search for a country"></b-form-input>
           </div>
         </b-col>
@@ -69,7 +69,7 @@
                     <img :data-src="item.flags?.png" v-lazy-load />
                   </div>
                   <div class="p-4">
-                    <b class="d-block mb-3">{{ item.name?.common }}</b>
+                    <span class="d-block mb-3 text-1">{{ item.name?.common }}</span>
                     <div class="mb-1">
                       <span class="info-title">Population:</span>
                       <span class="info-value"> {{ item.population }} </span>
@@ -157,6 +157,7 @@ export default {
   },
   data() {
     return {
+      timeOut: null,
       loading: false,
       regionList: ['africa', 'americas', 'asia', 'europe', 'oceania'],
       list: [],
@@ -236,7 +237,13 @@ export default {
         }
       );
     },
-    gitCountriesByName() {
+    getCountriesByName () {
+      clearTimeout(this.timeOut);
+      this.timeOut = setTimeout(() => {
+        this.getCountriesByNameFunc();
+      }, 300);
+    },
+    getCountriesByNameFunc() {
       this.loading = true;
       this.updatePathParams(this.$router, { name: this.searchParams.countryName });
       if (this.searchParams.region) { // clear value because of calling api

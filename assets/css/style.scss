@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: NunitoSans;
-    src: url(../font/NunitoSans-Regular.ttf) !important;
+    src: url(../font/NunitoSans-Regular.ttf);
   }
  
 * {
@@ -81,11 +81,15 @@ a.btn {
 
   .info-title {
     font-weight: 600;
+    font-size: 105%;
   }
   .info-value {
     font-weight: 300;
   }
-
+.text-1 {
+    font-weight: 800;
+    font-size: 120%;
+}
 
 @media (min-width: 768px) {
     .country-flag-detail {
