@@ -28,7 +28,11 @@
       <!-- detail info start -->
       <b-row v-else>
         <b-col cols="12" xl="6" class="mb-4">
-          <img class="country-flag-detail" :src="detail?.flags?.png" />
+          <div class="country-flag-detail">
+            <div class="img-container">
+              <img :data-src="detail?.flags?.png" v-lazy-load />
+            </div>
+          </div>
         </b-col>
         <b-col cols="12" xl="6" class="mb-5">
           <b-row>
@@ -77,13 +81,13 @@
                 }} </span>
               </div>
             </b-col>
-            <!-- <b-col cols="12" class="border-countries-box">
+            <b-col cols="12" class="border-countries-box">
               <span class="info-title"> Border Countries: </span>
               <NuxtLink v-for="(country, indexC) in borders" :to="'/detail/' + country.name?.toLowerCase()"
-                class="btn mr-1">
+                class="btn my-1 mr-1">
                 {{ country.name }}
               </NuxtLink>
-            </b-col> -->
+            </b-col>
           </b-row>
         </b-col>
       </b-row>
@@ -104,7 +108,11 @@ export default {
     let res = await $axios.get('v3.1/name/' + route?.params?.name + '?fullText=true');
     if (res?.data?.length > 0) {
       detail = res?.data[0];
-      if (detail?.borders?.length > 0) borders = await $axios.get('v2/alpha?codes=' + detail?.borders?.toString());
+      let r = null;
+      if (detail?.borders?.length > 0) {
+        r = await $axios.get('v2/alpha?codes=' + detail?.borders?.toString());
+        borders = r?.data;
+      }
     }
     return {
       detail,
