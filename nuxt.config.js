@@ -105,7 +105,7 @@ export default {
   },
 
   router: {
-    base: '/VueTestCountries',
+    base: '/VueTestCountries/',
     extendRoutes(routes, resolve) {
       routes.push({
         name: 'home',
