@@ -74,7 +74,6 @@ export default {
       native: false,
       directiveOnly: false,
       defaultImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTasF2J01pp5zzTcs1-GtFdrelxnu331FtNs6jNP6LRwfLdIpw0zZEB7iOOf5NoPeKb_8g&usqp=CAU',
-      // defaultImage: '~/assets/images/default-image.png',
 
       // To remove class set value to false
       loadingClass: 'isLoading',
