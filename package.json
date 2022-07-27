@@ -11,7 +11,9 @@
     "lint": "npm run lint:prettier",
     "lintfix": "prettier --write --list-different .",
     "test": "jest",
-    "buildStart": "npm run build && npm run start"
+    "buildStart": "npm run build && npm run start",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -44,6 +46,7 @@
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.4.4",
     "prettier": "^2.5.1",
+    "push-dir": "^0.4.1",
     "sass": "^1.54.0",
     "sass-loader": "10",
     "ts-jest": "^27.1.1",
