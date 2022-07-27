@@ -42,7 +42,15 @@
       <div>
 
 
-        <div>
+        <!-- loading start -->
+        <div v-if="loading" class="text-center">
+          <div class="spinner-grow m-auto d-block" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <!-- loading end -->
+
+        <div v-else>
 
           <!-- no data msg start -->
           <div v-if="!list?.length" class="text-center">
@@ -188,9 +196,11 @@ export default {
       this.$router.replace({ query });
     },
     sortList(field) {
-      this.sort.type = (this.sort.type === 'asc' ? 'desc' : 'asc');
-      this.sort.name = field;
-      this.updatePathParams(this.$router, { sort: this.sort.name, type: this.sort.type })
+      if(field) {
+        this.sort.type = (this.sort.type === 'asc' ? 'desc' : 'asc');
+        this.sort.name = field;
+        this.updatePathParams(this.$router, { sort: this.sort.name, type: this.sort.type })
+      }
       this.list = this.$lodash.orderBy(this.list, [this.sort.name], [this.sort.type]);
     },
     getList() {
@@ -217,6 +227,7 @@ export default {
       this.$axios.get('v3.1/region/' + this.searchParams.region).then(
         (response) => {
           this.list = response.data;
+          if (this.sort.name) this.sortList();
           this.loading = false;
         },
         (error) => {
@@ -237,6 +248,7 @@ export default {
         this.$axios.get('v3.1/name/' + this.searchParams.countryName).then(
           (response) => {
             this.list = response.data;
+            if (this.sort.name) this.sortList();
             this.loading = false;
           },
           (error) => {

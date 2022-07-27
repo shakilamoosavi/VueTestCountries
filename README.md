@@ -7,6 +7,8 @@
   - [Run on docker](#start-docker)
 - [normal Test](#normal-test)
 
+# Important Note
+- if you living in **Iran** please use vpn to can acess to Api Server
 # Featuers
 ## SSR Rendering with Nuxt
 all page compile on server and we use nuxt-links for client and server side support of pages
@@ -16,12 +18,12 @@ here is screenshot of server side rendering
 
 ## Sort 
 if you click on `population` or `country name` page sort with selected button `Asc`/`Desc`
-TODO Add pic
+![Nuxt Rendering](./help/sort-%26-search.png)
 
 ## push search text to url 
 if we sort or search we change url and also this url processed on SSR if Google or any crawller wnat to see that URL
 
-TODO Add pic
+![Nuxt Rendering](./help/sort-url.png)
 
 
 # Normal test
