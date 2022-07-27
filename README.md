@@ -20,13 +20,20 @@ here is screenshot of server side rendering
 if you click on `population` or `country name` page sort with selected button `Asc`/`Desc`
 ![Nuxt Rendering](./help/sort-%26-search.png)
 
-## push search text to url 
+## Push search text to url 
 if we sort or search we change url and also this url processed on SSR if Google or any crawller wnat to see that URL
-
 ![Nuxt Rendering](./help/sort-url.png)
 
 
-# Normal test
+## Theme
+ Toggle the color scheme between light and dark mode without using any 3rd party libraries
+
+
+## Lazy load images
+
+
+## Server side rendering
+
 
 ## Build Setup
 
