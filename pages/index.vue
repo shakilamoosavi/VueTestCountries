@@ -26,6 +26,7 @@
                 <fa v-if="sort.type === 'asc'" :icon="['fas', 'fa-arrow-down-a-z']" />
                 <fa v-else :icon="['fas', 'fa-arrow-down-z-a']" />
               </span>
+              
               Country name
             </div>
           </div>
